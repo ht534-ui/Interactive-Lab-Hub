@@ -3,9 +3,9 @@
 _This project is to be done in teams of 2._
 
 **NAME OF BOTH COLLABORATOR(S) HERE**
-
+Serena Tsai(ht534), Jacey Hu(ch2296)
 **THE MASTERWORK YOU DREW FROM THE HAT:**
-
+The Clapper, Joseph Enterprises, 1985
 ---
 
 One way to understand greatness is to look to the greats. Just as painters learn
@@ -92,6 +92,18 @@ the interaction*:
 **Describe your masterwork here, in your own words. What is the core interaction
 someone would recognize it by?**
 
+### What inputs are available to the user? What responses does the work give?
+The input is a clap, or any sound that resembles a clap. The response can take several forms, the most common being a light or another connected device turning on or off.
+
+### Who is present, and how does the piece color the relationships between them?
+In the commercial for this product, an older woman who is already in bed claps to turn off a warm yellow lamp and the television. It changes the relationship between a person and their room: she no longer has to get out of bed to reach the switch, and she has more control over the space from where she is.
+
+### What is the piece famous for? What are its strengths and weaknesses?
+The Clapper is famous for allowing people to control household devices with a simple clap. Its biggest strength is convenience: the interaction is easy to understand and does not require the user to physically reach the device. However, its simplicity is also a weakness. Because it responds to sound rather than recognizing a specific user or gesture, other similar sounds may accidentally trigger it. It also provides limited feedback beyond the device simply turning on or off.
+
+### What is the core interaction someone would recognize it by?
+The core interaction of the Clapper is the immediate connection between a clap and a change in the environment. A user claps, the device detects the sound, and a connected appliance turns on or off. What makes the interaction recognizable is its simplicity: a familiar human action replaces the need to physically operate a switch.
+
 ## Part A. Plan
 
 For your masterwork, reconstruct the interaction as a scene:
@@ -104,6 +116,17 @@ For your masterwork, reconstruct the interaction as a scene:
 - **Goals:** What is each player trying to do?
 
 **Describe your setting, players, activity, and goals here.**
+### Setting
+The interaction takes place in a bedroom, where a person is lying in bed watching television. The room is designed around the idea that the user wants to control devices without getting up.
+
+### Players
+The main player is the person in bed. The other “player” is the Clapper system, which listens for clapping sounds and controls the connected device. In some scenarios, other people or environmental sounds are also indirectly involved because they can accidentally trigger or interfere with the system.
+
+### Activity
+The user claps to turn the television or light on or off. The Clapper listens for the sound and responds by changing the state of the connected device. Our storyboards also explore cases where the interaction does not work perfectly, such as when background noise causes an accidental trigger or when the system fails to recognize the user’s clap.
+
+### Goals
+The user’s goal is to control devices in the room without physically reaching for a switch or getting out of bed. The Clapper’s goal is to correctly recognize the clap and respond at the right moment. Our storyboards also explore what happens when this relationship breaks down, such as when applause accidentally turns the TV off or loud background music prevents the clap from being recognized.
 
 Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
 don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
@@ -111,6 +134,11 @@ and the people around it. If you're new to storyboarding, read
 [this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
 
 **Include pictures of your storyboards here.**
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image.png)
 
 Use the storyboards to decide what interaction to prototype.
 
@@ -123,10 +151,14 @@ is doing what you've scripted — a person can wave a flashlight, or you can nar
 it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
+When we acted out the interaction, we realized that our original storyboard focused mostly on turning the TV on. In a real interaction, however, the user would also need an easy way to turn it off.
 
 **Did new ideas about the piece surface once you were on your feet?**
+We added a turn-off scene after acting it out. This made us realize that the interaction is not just about activating a device, but about giving the user control over its state without having to physically reach it.
 
 **Are there key moments in the interaction where things could go in a different direction?**
+Yes. After the TV is turned on, the user may eventually want to turn it off with another clap. The interaction can also go in unintended directions if the Clapper detects other sounds as claps or fails to recognize a clap because of background noise.
+
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
 
 ## Part C. Prototype the Light (light first!)
@@ -175,10 +207,13 @@ the top of this lab: a viewer who knows the piece should recognize it; a viewer
 who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
 
 **Include your video here.**
+https://drive.google.com/file/d/1tcSU6Az4nbP2InUYIqtBKUUXc0zNvJb2/view?usp=sharing
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
 Github, Twitter, a friend who lent you a lamp) that informed your recreation.
+
+I collaborated with Jacey Hu (ch2296) on this lab. We worked together on researching the Clapper, developing and iterating the storyboards, prototyping the interaction with Tinkerbelle, and recording the final video sketch.
 
 ---
 
