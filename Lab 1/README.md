@@ -134,11 +134,19 @@ and the people around it. If you're new to storyboarding, read
 [this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
 
 **Include pictures of your storyboards here.**
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image.png)
+### Storyboard 1
+
+![Storyboard 1 - Scene 1](Storyboard%201-1.png)
+
+![Storyboard 1 - Scene 2](Storyboard%201-2.png)
+
+![Storyboard 1 - Scene 3](Storyboard%201-3.png)
+
+![Storyboard 1 - Scene 4](Storyboard%201-4.png)
+
+### Storyboards 2 & 3
+
+![Storyboards 2 and 3](Storyboard%202%20%26%203.png)
 
 Use the storyboards to decide what interaction to prototype.
 
