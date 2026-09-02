@@ -253,11 +253,15 @@ feedback: I think your interaction is really straightforward and clear! I also r
 I just had one small question: why did you choose to control the TV instead of the room lights, （especially since you also mentioned some possible weaknesses with that choice） The first scenario that came to my mind was lying in bed and not wanting to get up to turn the lights off before going to sleep haha.
 Since the interaction is based on clapping, I also wonder if you could show a few more variations of the interaction, like one clap, multiple claps in a row, or fast clapping, and see how the system responds differently to each.
 
-Group 3
+Group 3 (The Hand from Above: Edmond Kong)
 
-project link: HERE
+project link: https://github.com/edmkong/Interactive-Lab-Hub
 
-feedback: HERE
+feedback: For the last frame of storyboard 3, I am not sure if the clapper is broken because loud music was playing or if it is already broken without loud music playing. The last frame makes it seem like there is no music playing and the patient’s claps aren’t being recognized.
+
+I like how the TV is drawn to show different actions, as well as the red text.
+
+I also think the video is well made and communicates the intention of the Clapper
 
 ## Remix, Update, or Critique the Master
 
