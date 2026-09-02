@@ -279,7 +279,6 @@ your response engages with what your master was really doing.
 
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
-## Remix, Update, or Critique the Master
 
 ### Clapper 2.0 — Confirm Before Action
 
