@@ -286,17 +286,22 @@ prototype are great too.**
 
 ### Clapper 2.0 — Confirm Before Action
 
+Problem:  
 One of the main weaknesses we identified in the original Clapper is false triggering. Because the system responds to sounds that resemble claps, sounds from a television, music, or other people could unintentionally activate a connected device.
 
-For Clapper 2.0, we added a confirmation step while keeping clapping as the core interaction. Instead of immediately changing the device state, the system first recognizes a clap pattern and briefly flashes the light to acknowledge the command. The user then claps again to confirm the action, after which the device turns on or off.
+Redesign:  
+For Clapper 2.0, we added a confirmation step while keeping clapping as the core interaction:
+**Clap pattern → Light flashes → Clap to confirm → Action**
+Instead of immediately changing the device state, the light briefly flashes to acknowledge the command. The user then claps again to confirm before the device turns on or off.
 
-This redesign preserves the simplicity of the original Clapper while making accidental activation less likely. It also gives light a new role in the interaction: instead of only showing the final ON/OFF state, light becomes feedback that communicates that the system has heard the user and is waiting for confirmation.
+Why It Works:  
+This redesign preserves the simplicity of the original Clapper while making accidental activation less likely. It also gives light a new role: instead of only showing the final ON/OFF state, light now communicates that the system has heard the user and is waiting for confirmation.
 
 ### Storyboards
 
 ### Video
-https://drive.google.com/file/d/1SYpLbNUh-MJKiEAYQ8EolPlnPW2BPXfz/view?usp=drive_link
-https://drive.google.com/file/d/1lMZ--x6HPxzJu98SQgj0Xz-qF_sWi6e3/view?usp=drive_link
+- [Watch: Clapper 2.0 Interaction] https://drive.google.com/file/d/1SYpLbNUh-MJKiEAYQ8EolPlnPW2BPXfz/view?usp=drive_link
+- [Watch: False Trigger Test] https://drive.google.com/file/d/1lMZ--x6HPxzJu98SQgj0Xz-qF_sWi6e3/view?usp=drive_link
 ---
 *Assignment lineage: this lab merges "Staging Interaction" (Interactive Lab Hub)
 with "Recreating the Masters" (Interaction Design Studio, Profs. Scott Minneman &
