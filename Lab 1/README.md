@@ -298,8 +298,8 @@ Why It Works:
 This redesign preserves the simplicity of the original Clapper while making accidental activation less likely. It also gives light a new role: instead of only showing the final ON/OFF state, light now communicates that the system has heard the user and is waiting for confirmation.
 
 ### Storyboards
-![Clapper 2.0 Interaction](Lab 1\Clapper 2.0 Storyboard_Interaction.png)
-![Clapper 2.0 False Trigger](Lab 1\Clapper 2.0 False Trigger Test.png)
+![Clapper 2.0 Interaction](Clapper%202.0%20Storyboard_Interaction.png)
+![Clapper 2.0 False Trigger](Clapper%202.0%20False%20Trigger%20Test.png)
 
 ### Video
 - [Watch: Clapper 2.0 Interaction] https://drive.google.com/file/d/1SYpLbNUh-MJKiEAYQ8EolPlnPW2BPXfz/view?usp=drive_link
