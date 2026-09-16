@@ -203,9 +203,163 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
 
+### Attention Horizon
 
+#### Concept
+
+**Attention Horizon is a clock that represents the passage of time and accumulated focus time through a changing beach scene.**
+
+The position of the sun represents the progression of the day. It rises in the morning, travels across the sky, and eventually sets in the evening.
+
+The condition of the beach represents the amount of intentional focus time that the user has recorded. As accumulated focus time increases, the sky becomes brighter, clouds disappear, and the ocean becomes calmer.
+
+The central design principle is:
+
+> **The sun shows how much of the day has passed, while the beach weather shows how much intentional focus time has been recorded.**
+
+Instead of only asking:
+
+> “What time is it?”
+
+Attention Horizon also asks:
+
+> “What did my attention make this day feel like?”
+
+---
+
+### Representing Time
+
+The clock communicates the approximate time of day through the sun’s position and the color of the sky.
+
+| Time of day | Visual representation                                        |
+| ----------- | ------------------------------------------------------------ |
+| Morning     | The sun rises from the left side of the screen               |
+| Noon        | The sun reaches its highest position                         |
+| Afternoon   | The sun moves toward the right side                          |
+| Sunset      | The sun approaches the horizon and the sky becomes warmer    |
+| Night       | The sun disappears and may be replaced by the moon and stars |
+
+The exact numerical time does not need to remain visible. The user can understand the general stage of the day through the landscape.
+
+---
+
+### Measuring Focus
+
+Attention Horizon does not attempt to detect whether the user is actually concentrating. Instead, it measures **self-recorded focus duration**.
+
+The user presses the left button when beginning an intentional focus session and presses the right button when the session ends. The device measures the elapsed time and adds it to the total focus time accumulated that day.
+
+The condition of the beach is based on this accumulated time:
+
+| Accumulated focus time | Focus state                   | Beach scene                               |
+| ---------------------- | ----------------------------- | ----------------------------------------- |
+| 0–20 minutes           | Low accumulated focus time    | Darker sky, clouds, rain, and rough waves |
+| 20–60 minutes          | Medium accumulated focus time | Normal sky and moderate waves             |
+| More than 60 minutes   | High accumulated focus time   | Bright sky, clear weather, and calm water |
+
+These thresholds are initial design assumptions. Future versions could allow users to customize them based on their own daily goals.
+
+---
+
+### Interaction
+
+#### Idle State
+
+When no focus session is active, the screen displays the current beach scene.
+
+* The sun’s position communicates the approximate time.
+* The weather and ocean communicate accumulated focus time.
+
+#### Starting a Focus Session
+
+The user presses the **left button** to begin a focus session.
+
+The display briefly shows **Focus Started**, and a small indicator confirms that the timer is active.
+
+#### Active Focus Session
+
+While the timer is running, the user works without needing to interact with the clock. The device continues measuring elapsed time while the sun moves according to the actual time of day.
+
+#### Ending a Focus Session
+
+The user presses the **right button** to stop the session.
+
+The completed session duration is added to the daily total. The beach then updates according to the new accumulated focus time.
+
+---
+
+### Controls
+
+| Control      | Action                                                   |
+| ------------ | -------------------------------------------------------- |
+| Left button  | Start recording a focus session                          |
+| Right button | Stop the session and add its duration to the daily total |
+
+The two buttons record the beginning and end of an intentional focus period. They do not measure the quality or intensity of the user’s concentration.
+
+---
+
+### Verplank Diagram
+
+#### Do
+
+* Look at the sun to understand the approximate time of day.
+* Press the left button to start a focus session.
+* Work without interacting with the device.
+* Press the right button to end the session.
+* Look at the beach to understand accumulated focus time.
+
+#### Feel
+
+* Calm while focusing.
+* Aware of how intentional time is being used.
+* Less pressure from constantly seeing exact numerical time.
+* Satisfied as the beach gradually becomes calmer.
+
+#### Know
+
+The user understands:
+
+* The approximate stage of the day.
+* Whether the focus timer is currently active.
+* How much intentional focus time has accumulated.
+* How close they are to reaching a daily focus goal.
+
+#### Display
+
+The MiniPiTFT shows:
+
+* The sun’s position.
+* The color and brightness of the sky.
+* The condition of the ocean.
+* Clouds or rain when little focus time has accumulated.
+* A small indicator when the focus timer is active.
+
+#### Control
+
+* **Left button:** Start focus.
+* **Right button:** Stop focus.
+
+---
+
+### Storyboard
+
+---
+
+### Sketch
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
+
+### Peer Feedback
+
+I gave feedback to:
+
+- **[Classmate’s name]** — [GitHub repository link]
+
+Feedback I received:
+
+- **[Feedback point]**
+- **[Feedback point]**
 
 # Lab 2 Part 2
 
