@@ -386,6 +386,8 @@ One thought: people often have several focus sessions in a single day. If the de
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
 
+The feedback helped us think about how a focus session could represent entering a flow state. This inspired us to add a turtle to the beach animation. As the user focuses, the turtle becomes part of the calmer natural scene, representing the user gradually entering flow and becoming more connected with the environment.
+
 ## Update your Lab Hub
 
 [Update your Lab Hub](pull_updates/README.md) to get the latest content and requirements for Part 2.
@@ -410,16 +412,33 @@ After you edit and work on the scripts for Lab 2, the files should be upload bac
 
 After that, Git will ask you to login to your GitHub account to push the updates online, you will be asked to provide your GitHub user name and password. Remember to use the "Personal Access Tokens" you set up in Part A as the password instead of your account one! Go on your GitHub repo with your laptop, you should be able to see the updated files from your Pi!
 
+### Modified Barebones PiClock
+
+For the first iteration, we modified the provided `screen_clock.py` to display the current time on the MiniPiTFT. This small modification helped me verify that I could control the display, position text, and refresh the screen continuously.
+
+The final version of the code is available in [`barebones_clock.py`](barebones_clock.py).
+
+#### Demo Video
+
+[Watch the modified barebones PiClock demo](https://www.youtube.com/shorts/yJ6-v29Rack)
+
 ## Now, make your own PiClock
 
 Do take advantage of having done the previous iteration to refine and simplify your design.
 
-** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
+### Final PiClock — Attention Horizon
 
+The final version develops the original clock into an interactive beach scene. The sun represents the progression of the day, while the beach conditions represent accumulated self-recorded focus time.
 
-\*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+The left button starts a focus session, and the right button ends it.
 
-\*\*\***Take a video of your PiClock.**\*\*\*
+#### Final Code
+
+[View the final `screen_clock.py`](screen_clock.py)
+
+#### Final Demo Video
+
+[Watch the final Attention Horizon demo](https://www.youtube.com/watch?v=mNODjSwtffE)
 
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
