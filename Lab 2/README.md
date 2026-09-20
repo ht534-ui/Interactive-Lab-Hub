@@ -253,9 +253,9 @@ The condition of the beach is based on this accumulated time:
 
 | Accumulated focus time | Focus state                   | Beach scene                               |
 | ---------------------- | ----------------------------- | ----------------------------------------- |
-| 0–20 minutes           | Low accumulated focus time    | Darker sky, clouds, rain, and rough waves |
-| 20–60 minutes          | Medium accumulated focus time | Normal sky and moderate waves             |
-| More than 60 minutes   | High accumulated focus time   | Bright sky, clear weather, and calm water |
+| 0–20 minutes           | Low accumulated focus time    | Passengers, ships, clouds, rain, and rough waves |
+| 20–60 minutes          | Medium accumulated focus time | Normal sky, less passengers, less ships and moderate waves             |
+| More than 60 minutes   | High accumulated focus time   | Bright sky, clear weather, turtles, crabs and calm water |
 
 These thresholds are initial design assumptions. Future versions could allow users to customize them based on their own daily goals.
 
@@ -343,25 +343,39 @@ The MiniPiTFT shows:
 ---
 
 ### Storyboard
+<img src="demo_pic/storyboard_1.png" width="600">
 
+<img src="demo_pic/storyboard_2.png" width="600">
+
+<img src="demo_pic/storyboard_3.png" width="600">
+
+<img src="demo_pic/storyboard_4.png" width="600">
+
+<img src="demo_pic/storyboard_5.png" width="600">
 ---
 
 ### Sketch
+<img src="demo_pic/sketch_1.png" width="600">
 
-**Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
+<img src="demo_pic/sketch_2.png" width="600">
 
 ### Peer Feedback
 
 I gave feedback to:
 
-- **Jacey Hu** — [\[GitHub repository link\]](https://github.com/cgyh98/Interactive-Lab-Hub/tree/Fall2026/Lab%202)
+- Jacey Hu
+- David Zhang
+- Jerry Lee
 
 Feedback I received:
 
-- **[Feedback point]**: I really like the idea behind this clock. Instead of worrying about the actual time on the wall, the time you actually spend is the time that's truly yours. I also like how the interface starts with rough waves and gradually settles into a calm sea as the focus session gets longer. It's a nice way to represent the user entering a flow state, and wanting to see that calm sea gives you a reason to keep going.
+- Feedback point: I really like the idea behind this clock. Instead of worrying about the actual time on the wall, the time you actually spend is the time that's truly yours. I also like how the interface starts with rough waves and gradually settles into a calm sea as the focus session gets longer. It's a nice way to represent the user entering a flow state, and wanting to see that calm sea gives you a reason to keep going.
 
 One thought: people often have several focus sessions in a single day. If the device could also track the total accumulated focus time across all of those sessions and give the user some feedback on it, I think that would create an even stronger sense of accomplishment.
-- **[Feedback point]**
+
+- Feedback point: The sun and weather do a nice job giving the two time types a clear visual identity. The build order also makes sense for a screen this small. I'd want to check the morning, sunset, and night transitions early in Demo Mode, since the sun's position could be tricky to make out near the horizon.
+
+- Feedback point: I like that the beach can shift mood without relying on numbers. On a 240×135 screen, I'd keep the waves, clouds, and rain minimal so the sun stays visible. It'd also help to add a small visual signal showing when a focus session is actively being tracked.
 
 # Lab 2 Part 2
 
