@@ -1,10 +1,10 @@
 # Chatterboxes
 
-**NAMES OF COLLABORATORS HERE**
-Jason Huang (jh3264)
-Serena Tsai (ht534)
-Yuge Xu (yx692)
-Ziji Zhang (zz894)
+**NAMES OF COLLABORATORS HERE**:
+Jason Huang (jh3264), 
+Serena Tsai (ht534), 
+Yuge Xu (yx692), 
+Ziji Zhang (zz894), 
 Youzhu Jin (yj578)
 
 > **How to read this page:** my own responses are set in blockquotes like this
