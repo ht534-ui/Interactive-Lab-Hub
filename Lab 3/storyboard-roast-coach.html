@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Roast Coach</title>
+  <style>
+    :root { --paper:#f7f3ea; --ink:#292b2d; --muted:#74797b; --line:#c8c7c1; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#deddd8; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+    .tools { max-width:1280px; margin:auto; padding:14px 48px; display:flex; justify-content:flex-end; }
+    .tools a { color:#616769; font-size:12px; text-underline-offset:3px; }
+    .tools a:focus-visible { outline:2px solid #367e78; outline-offset:4px; }
+    .page { width:1280px; max-width:100%; margin:auto; padding:46px 48px 50px; background:var(--paper); }
+    h1 { margin:0 0 35px; font:700 32px/1 Georgia,"Times New Roman",serif; letter-spacing:-.025em; }
+    .route + .route { margin-top:50px; }
+    h2 { display:flex; align-items:center; gap:14px; margin:0 0 18px; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    h2::after { content:""; flex:1; height:1px; background:var(--line); }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:29px 18px; }
+    figure { margin:0; min-width:0; }
+    .frame { position:relative; width:100%; aspect-ratio:4/3; background:var(--paper); border:1px solid var(--line); overflow:hidden; }
+    img { width:100%; height:100%; display:block; object-fit:contain; }
+    .number { position:absolute; top:10px; left:10px; width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:#73797c; color:#faf8f2; font-size:10px; font-weight:700; }
+    figcaption { padding-top:8px; }
+    figcaption strong { display:block; font:700 18px/1.15 Georgia,"Times New Roman",serif; }
+    figcaption span { display:block; margin-top:4px; color:var(--muted); font-size:10px; line-height:1.4; letter-spacing:.06em; text-transform:uppercase; }
+    .cue-defs { position:absolute; width:0; height:0; overflow:hidden; }
+    .cue { display:flex; align-items:center; gap:7px; margin-top:4px; color:var(--muted); font-size:10px; line-height:1.4; letter-spacing:.06em; text-transform:uppercase; }
+    .cue svg { flex:none; width:54px; height:15px; fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; }
+    .done figcaption strong { color:#ad5e3c; }
+    .rhythm { display:flex; justify-content:space-between; align-items:center; gap:40px; border-top:1px solid var(--line); margin-top:38px; padding-top:20px; }
+    .rhythm p { margin:0; display:flex; gap:28px; color:var(--muted); font-size:10px; letter-spacing:.06em; text-transform:uppercase; line-height:1.6; }
+    .rhythm p span { display:block; }
+    .rhythm b { display:block; font-weight:700; }
+    .wave { display:flex; align-items:center; gap:18px; color:var(--muted); }
+    .wave-label { font:italic 13px Georgia,"Times New Roman",serif; white-space:nowrap; }
+    .wave svg { width:260px; height:60px; overflow:visible; }
+    .wave path,.wave line { stroke:#8b908f; stroke-width:1.2; fill:none; }
+    .wave text { fill:var(--muted); font:9px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; letter-spacing:.02em; }
+    @media (max-width:760px) { .page { padding:28px 20px; } .tools { padding:14px 20px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .rhythm { flex-direction:column; align-items:flex-start; gap:20px; } }
+    @media (max-width:460px) { .grid { grid-template-columns:1fr; } h2 { font-size:10px; letter-spacing:.1em; } .wave { flex-direction:column; align-items:flex-start; gap:8px; } .rhythm p { gap:20px; } }
+    @media print { .tools { display:none; } body { background:var(--paper); } figure { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+  <nav class="tools" aria-label="Download"><a href="storyboard-roast-coach-render.png" download>Download PNG</a></nav>
+  <main class="page" id="storyboard">
+    <h1>The Roast Coach</h1>
+<svg class="cue-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="cue-listen" viewBox="0 0 60 16"><path d="M2 8 C7 8 7 3 12 3 S17 13 22 13 S27 3 32 3 S37 13 42 13 L49 8 M49 4 L55 8 L49 12"/></symbol>
+  <symbol id="cue-speak" viewBox="0 0 60 16"><path d="M11 4 L5 8 L11 12 M5 8 H16 C21 8 21 3 26 3 S31 13 36 13 S41 3 46 3 S51 8 56 8"/></symbol>
+  <symbol id="cue-cut" viewBox="0 0 60 16"><path d="M2 8 C6 8 6 3 10 3 S14 13 18 13 L22 8 M25 3 L33 13 M33 3 L25 13 M37 8 C41 8 41 3 45 3 S49 13 53 13 M53 4 L58 8 L53 12"/></symbol>
+  <symbol id="cue-hold" viewBox="0 0 60 16"><path d="M5 8 H55"/></symbol>
+</svg>
+<section class="route" aria-labelledby="route-food">
+  <h2 id="route-food">One check-in · three food reports</h2>
+  <div class="grid">
+    <figure>
+      <div class="frame"><img src="assets/storyboard-roast-coach/01-start.png" alt="A woman presses the top button of a two-button Orange device; a small neutral face wakes on its screen."><span class="number">01</span></div>
+      <figcaption><strong>Press to check in</strong><small class="cue"><svg aria-hidden="true"><use href="#cue-listen"/></svg>USER → DEVICE · LISTENING</small></figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="assets/storyboard-roast-coach/02-broccoli.png" alt="The woman reports broccoli; the device shows a delighted green circular face."><span class="number">02</span></div>
+      <figcaption><strong>Broccoli earns a cheer</strong><small class="cue"><svg aria-hidden="true"><use href="#cue-speak"/></svg>DEVICE → USER · GREEN PRAISE</small></figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="assets/storyboard-roast-coach/03-cake.png" alt="The woman admits cake; the circular face turns yellow and raises an eyebrow."><span class="number">03</span></div>
+      <figcaption><strong>Cake raises an eyebrow</strong><small class="cue"><svg aria-hidden="true"><use href="#cue-speak"/></svg>DEVICE → USER · YELLOW ROAST</small></figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="assets/storyboard-roast-coach/04-chicken.png" alt="The woman raises a hand and interrupts the coach with fried chicken; its yellow face starts turning red as its speech cuts off."><span class="number">04</span></div>
+      <figcaption><strong>She interrupts the coach</strong><small class="cue"><svg aria-hidden="true"><use href="#cue-cut"/></svg>FRIED CHICKEN · VOICE CUT</small></figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="assets/storyboard-roast-coach/05-pause.png" alt="Close-up of the red circular face holding a silent stare while the woman waits."><span class="number">05</span></div>
+      <figcaption><strong>Hold the stare</strong><small class="cue"><svg aria-hidden="true"><use href="#cue-hold"/></svg>RED · ONE SECOND SILENCE</small></figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="assets/storyboard-roast-coach/06-laugh.png" alt="The woman laughs and reaches for the top button as the red circular face smirks."><span class="number">06</span></div>
+      <figcaption><strong>The punchline lands</strong><small class="cue"><svg aria-hidden="true"><use href="#cue-speak"/></svg>DEVICE → USER · LAUGH / STOP</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+  </main>
+</body>
+</html>

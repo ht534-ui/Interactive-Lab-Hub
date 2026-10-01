@@ -1,0 +1,2 @@
+# Optional GPT-Live prototype; install into Lab 3/.venv after Part 1 setup.
+openai[realtime]==3.19.1

@@ -1,1 +1,5 @@
-/.venv
+.venv/
+models/
+voices/
+recordings/
+speech-scripts/welcome.wav
