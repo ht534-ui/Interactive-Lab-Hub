@@ -1,11 +1,11 @@
 # Chatterboxes
 
 **NAMES OF COLLABORATORS HERE**
-
-> **Jiesen Huang.** I tested the Part 1 speech interaction on Orange. Codex
-> assisted with remote setup, scripts, this writeup, and the storyboard illustrations
-> and layout; I provided the speech and listening observations and the coach concept.
-> A friend wrote the three-user test feedback incorporated into Part 2.
+Jason Huang (jh3264)
+Serena Tsai (ht534)
+Yuge Xu (yx692)
+Ziji Zhang (zz894)
+Youzhu Jin (yj578)
 
 > **How to read this page:** my own responses are set in blockquotes like this
 > one, to separate them from the original assignment text.
