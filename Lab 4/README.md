@@ -21,7 +21,7 @@
 ## Lab Overview
 Team: Serena Tsai and Terence Zhang  
 Members: Serena Tsai (ht534, [ht534-ui](https://github.com/ht534-ui)) and Terence Zhang ([TerenceZhang29](https://github.com/TerenceZhang29))  
-Project name: **Sugar Cube Dropper**
+Project name: Sugar Cube Dropper
 
 
 For lab this week, we focus on both sensing and actuation, bringing new modes of input and output into your devices, while also prototyping the physical structure and overall look of the device. You will consider how the physical form supports sensing and actuation, and how these elements come together to shape the interaction and aesthetics of the device.
@@ -340,20 +340,17 @@ Movement: after the third reach, a servo swings a "stop" arm or lid over the bow
 
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
 
-> We selected the **Sugar Cube Dropper**. It creates a clear dining interaction from one familiar action: placing a cup down. The distance sensor can remain hidden in or beside the coaster, while the servo provides an immediately visible physical response by opening a gate. This design also gives us focused physical questions to test: whether the mechanism releases exactly one cube, whether the cube lands reliably in the cup, and how quickly the system should react after detecting the cup.
-
-> Our first prototype separates the project into two risks. The interaction prototype tests whether cup detection can reliably trigger only once per placement. The physical prototype tests the hopper, gate, and chute geometry with real sugar cubes. We use servo channel 1 because our Part C test verified motion on that channel.
+> We picked design 2, the sugar cube dropper. It has the clearest sense → act loop (cup goes down, sugar goes in), it only needs one sensor and one servo, and it raised the most physical questions to answer with cardboard: how cubes are held, released, and guided into the cup.
+>
+> **Pivot: from a gate to a rotating wheel.** In the sketch, a servo opened a gate under the hopper so a cube could slide out. Once we started building it, a gate looked hard to control. How many cubes fall depends on how long the gate stays open and how the cubes are stacked, so it could release zero, one, or several at once, and cubes could jam half-way through. We switched to a rotating wheel instead: a cardboard cross mounted on the servo horn divides the space under the hopper into four pockets. Each pocket holds one cube, and each 90° turn of the servo carries one pocket from the hopper to the chute and drops its cube. This is easier to control with the servo, since we just send it to fixed angles instead of timing an open/close, and it makes the dose easy to set: one turn for one cube, two turns for two.
+>
+> One limitation: our servo (Miuzei MS18 micro servo) only rotates 0–180°, not continuously. So the wheel can step 0° → 90° → 180° to drop up to two cubes, then has to swing back to 0° to reset before the next round. We still need to test whether the pockets pick up or drop extra cubes on the way back, and whether the micro servo has enough torque to push the wheel through a full hopper without stalling.
 
 Build a cardboard or other low-fidelity physical prototype of your design.
 
 **\*\*\*Document your rough prototype with photos and/or video.\*\*\***
 
-> **Rough prototype evidence to add after assembly:**
->
-> - Photo of the cardboard hopper and one-cube gate
-> - Photo showing the cup, chute, distance sensor, and servo placement
-> - Short video showing a cup placement and one dispensing cycle
-> - Notes on jams, missed cups, double drops, and changes to the chute angle
+> <img src="images/cardboard_prototype_8418.jpg" width="32%" alt="Cardboard prototype mounted on the servo, wired to the Servo pHAT on the Pi"> <img src="images/cardboard_prototype_8419.jpg" width="32%" alt="Side view of the cardboard piece attached to the servo horn"> <img src="images/cardboard_prototype_8420.jpg" width="32%" alt="Top view of the cardboard prototype held in hand">
 
 
 ---
@@ -367,55 +364,6 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 ### Part E
 
 #### Build & Integrate: Sensing + Actuation
-
-> ### Our interaction
->
-> **Cup placed → proximity crosses the calibrated threshold → three consecutive readings confirm the cup → servo opens the gate → one sugar cube drops → servo closes the gate → system waits for cup removal before re-arming.**
->
-> The confirmation window reduces false triggers from a hand passing over the coaster. Separate detection and release thresholds add hysteresis, preventing noisy readings near one threshold from dispensing multiple cubes. Requiring cup removal before re-arming makes each placement a single interaction.
->
-> ```mermaid
-> flowchart LR
->     A[Place cup] --> B[VCNL4040 detects cup]
->     B --> C[Confirm 3 readings]
->     C --> D[Servo opens gate]
->     D --> E[One cube drops]
->     E --> F[Gate closes]
->     F --> G[Remove cup to reset]
-> ```
->
-> ### Code
->
-> The integrated prototype is implemented in [`sugar_cube_dropper.py`](sugar_cube_dropper.py). It defaults to Servo pHAT channel 1 and includes adjustable detection thresholds, confirmation readings, gate angles, and a hardware-free simulation.
->
-> Test the interaction logic first:
->
-> ```bash
-> python sugar_cube_dropper.py --dry-run
-> ```
->
-> Before using the physical prototype, run `qwiic_distance.py` and record the readings with no cup and with the intended cup in position. Then select a threshold between those ranges:
->
-> ```bash
-> python sugar_cube_dropper.py --cup-threshold 1000 --release-threshold 700
-> ```
->
-> The current thresholds and servo angles are starting values, not calibrated results. The first physical trial must begin without sugar cubes to confirm that the gate moves safely and does not collide with the housing.
-
-> ### Physical testing checklist
->
-> 1. Run an unloaded servo test and confirm the gate opens and closes without binding.
-> 2. Measure proximity values with the coaster empty and with the cup correctly positioned.
-> 3. Test ten cup placements without sugar and count false or missed triggers.
-> 4. Add one sugar cube and adjust the gate opening and chute angle.
-> 5. Test ten single-cube drops and record successful drops, jams, and double drops.
-> 6. Repeat with the cup slightly off-center to find the usable placement area.
-
-> ### Preliminary reflection
->
-> The design shows that sensing and physical form cannot be tuned independently. Sensor placement defines where a user can put the cup, while the hopper and chute determine whether the servo's small rotation becomes a reliable food-serving action. A larger movement is not automatically clearer: opening the gate too far could release multiple cubes, while opening it too briefly could jam. The meaningful variables are therefore the proximity threshold, confirmation time, gate angle, open duration, and chute alignment.
->
-> **This section currently documents the implemented control logic and the planned physical evaluation. We will replace this note with observed results after testing the assembled prototype.**
 
 For Part 2, build the Feast Automata interaction you developed in Part D by connecting sensing/input to physical actuation.
 
@@ -438,6 +386,52 @@ For Part 2, build the Feast Automata interaction you developed in Part D by conn
 - What changes when you adjust the sensor placement or servo motion?
 
 Iterate on the sensing, movement, and physical form, and document what you discover.
+
+#### Our Integrated Prototype: Joystick Sugar Cube Dropper
+
+Our final prototype replaces the original cup-detection input with a deliberate joystick gesture. The user rotates the joystick through one complete circle. The program reads both the horizontal (X) and vertical (Y) axes to determine whether the joystick has traveled around the center. After a complete circle is recognized, the servo rotates the cardboard sugar-cube wheel by 180 degrees, allowing one sugar cube to fall into the chute. The system then waits for the joystick to return to its neutral center before it can trigger again. This re-arming step prevents one gesture from accidentally dispensing multiple cubes.
+
+| Stage | Input or state | Physical response |
+|---|---|---|
+| Ready | Joystick is at its neutral center | The rotator waits at its resting position |
+| Gesture | User moves the joystick in a full circle | The program tracks both X and Y axes |
+| Dispense | A complete circle is recognized | The servo turns the rotator 180 degrees |
+| Delivery | A rotator pocket reaches the chute | One sugar cube drops |
+| Re-arm | User releases the joystick back to center | The system becomes ready for the next gesture |
+
+```mermaid
+flowchart TD
+    A[Rotate joystick in a full circle] --> B[Track X and Y movement]
+    B --> C{Complete circle detected?}
+    C -- No --> B
+    C -- Yes --> D[Rotate servo 180 degrees]
+    D --> E[Drop one sugar cube]
+    E --> F[Wait for joystick center]
+    F --> A
+```
+
+The circular gesture makes dispensing intentional and playful: the user performs a motion before receiving a cube instead of simply pressing a button. Reading both axes is essential because either axis alone would only show back-and-forth movement and could not distinguish a circular gesture. The neutral-center requirement also creates a clear end to each interaction cycle.
+
+#### Final Code
+
+> **Placeholder — final tested implementation:** Terence will add the working joystick-and-servo Python file and link its filename here after pushing it to the shared repository. This README intentionally does not substitute an untested implementation for the code used in the physical prototype.
+
+#### Working Prototype Evidence
+
+> **Video placeholder:** Add the link or uploaded filename for the recorded working-prototype video here.
+>
+> **Final prototype photo placeholder:** Add one or more images showing the complete joystick, rotator, hopper, chute, and cup arrangement here.
+
+#### Written Reflection
+
+> **Placeholder for the team’s observations after the final code and video are uploaded.** Replace the prompts below with the results observed during the working prototype test:
+>
+> - What method did the final code use to recognize a complete circle from the X and Y readings?
+> - Which joystick thresholds or center range worked reliably?
+> - How long did the 180-degree servo movement take, and did it consistently release exactly one cube?
+> - What changes to the cardboard rotator, hopper, or chute improved reliability?
+> - What was fun, surprising, or challenging when sensing, movement, and physical form were combined?
+> - What would the team change in the next iteration?
 
 See encoder_accel_servo_dashboard.py in the Lab 4 folder for an optional example of chaining together three devices.
 
@@ -597,6 +591,50 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 ### Final Documentation
 
+#### Sugar Cube Dropper: Final Interaction
+
+The Sugar Cube Dropper turns serving sugar into a small physical ritual. Instead of pressing a normal dispenser button, the user draws a circle with a joystick. The Raspberry Pi interprets the two-axis gesture and commands a servo-driven cardboard rotator to move 180 degrees. This moves one sugar cube to the chute. The user then releases the joystick to its center position, resetting the interaction for the next serving.
+
+#### Looks Like
+
+The prototype is a tabletop cardboard dispensing machine built around a hopper, a rotating cardboard divider attached to the servo horn, and a chute aimed toward a cup. The rotating piece divides the space beneath the hopper into pockets so that the machine can control a single portion. The Raspberry Pi and Servo pHAT sit beside the mechanism, while the joystick is positioned separately as the user’s handheld control. The low-fidelity cardboard construction makes the mechanism visible and easy to modify.
+
+> **Final appearance media placeholder:** Add the clearest final prototype photo and the working-video link here.
+
+#### Works Like
+
+The device operates as a state-based sensing-and-actuation system:
+
+1. It waits while the joystick is centered.
+2. It reads both joystick axes as the user traces a circle.
+3. It confirms that a full circular gesture has been completed.
+4. It commands the servo to rotate the dispenser by 180 degrees.
+5. The rotator carries one sugar cube to the chute, where it drops toward the cup.
+6. It does not accept another gesture until the joystick returns to its neutral center.
+
+The X and Y readings together describe movement around the joystick’s center. The center-return condition separates consecutive servings and reduces accidental repeated activation.
+
+#### Acts Like
+
+The user places a cup under the chute, takes hold of the joystick, and rotates it once around its full range. Completing the circle feels like winding or operating a small food machine. The rotator responds by turning and dispensing one cube. The user releases the joystick so it returns to center, providing a visible and physical ending before another cube can be requested.
+
+| Prototype lens | What our prototype demonstrates |
+|---|---|
+| Looks like | A visible cardboard hopper, rotating portion wheel, chute, cup area, joystick, and exposed electronics |
+| Works like | Two-axis circular-gesture detection triggers a 180-degree servo rotation and one-cube delivery |
+| Acts like | The user deliberately “winds” the joystick, receives a cube, then releases it to reset |
+
+#### Iteration From Part 1
+
+The initial sketch used a cup sensor and a timed gate. We first changed the gate to a rotating pocket mechanism because a timed opening could release zero, one, or several cubes depending on how the cubes were stacked. We then changed the input from automatic cup detection to a joystick circle. This makes the interaction more intentional and gives the user an active role in serving the sugar. The final design therefore connects a recognizable two-axis gesture to a clear physical result.
+
+#### Contributions and Remaining Uploads
+
+- Serena Tsai and Terence Zhang developed the Sugar Cube Dropper concept and physical interaction.
+- The team assembled and tested the joystick, servo, cardboard rotator, hopper, and chute, and recorded the working prototype video.
+- **Pending Terence’s push:** final tested Python code, exact filename/link, and any final implementation-specific reflection details.
+- **Pending media upload/link:** the recorded working-prototype video and final assembled-prototype photo(s).
+
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
@@ -616,4 +654,4 @@ For submission, the readme.md page for this lab should be edited to include the 
 * Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
 * Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
 
-> **AI assistance:** Codex helped set up the isolated Python environment, run and summarize sensor checks over SSH, and draft these experiment notes. I connected the hardware and performed the physical touch actions. The notes distinguish observed readings from tests that have not been completed.
+> **AI assistance:** Codex helped organize and draft the README documentation, including the interaction description, diagram, and Part F structure. The team developed, assembled, programmed, tested, and filmed the physical prototype. The final working control code was written and tested by the team, not generated as a substitute by Codex.
