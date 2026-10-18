@@ -389,7 +389,7 @@ Iterate on the sensing, movement, and physical form, and document what you disco
 
 #### Our Integrated Prototype: Joystick Sugar Cube Dropper
 
-Our final prototype replaces the original cup-detection input with a deliberate joystick gesture. The user rotates the joystick through one complete circle. The program reads both the horizontal (X) and vertical (Y) axes to determine whether the joystick has traveled around the center. After a complete circle is recognized, the servo rotates the cardboard sugar-cube wheel by 180 degrees, allowing one sugar cube to fall into the chute. The system then waits for the joystick to return to its neutral center before it can trigger again. This re-arming step prevents one gesture from accidentally dispensing multiple cubes.
+Our final prototype replaces the original cup-detection input with a deliberate joystick gesture. The user rotates the joystick through one complete circle. The program reads both the horizontal (X) and vertical (Y) axes to determine whether the joystick has traveled around the center. After a complete circle is recognized, the servo rotates the sugar-cube wheel by 180 degrees, allowing one sugar cube to fall into the chute. The system then waits for the joystick to return to its neutral center before it can trigger again. This re-arming step prevents one gesture from accidentally dispensing multiple cubes.
 
 | Stage | Input or state | Physical response |
 |---|---|---|
@@ -412,24 +412,22 @@ flowchart TD
 
 The circular gesture makes dispensing intentional and playful: the user performs a motion before receiving a cube instead of simply pressing a button. Reading both axes is essential because either axis alone would only show back-and-forth movement and could not distinguish a circular gesture. The neutral-center requirement also creates a clear end to each interaction cycle.
 
-#### Final Code
+#### Code
 
-> **Placeholder — final tested implementation:** Terence will add the working joystick-and-servo Python file and link its filename here after pushing it to the shared repository. This README intentionally does not substitute an untested implementation for the code used in the physical prototype.
+> **Placeholder — final tested implementation:** Add the working joystick-and-servo Python file and link its filename here.
 
 #### Working Prototype Evidence
 
-> **Video placeholder:** Add the link or uploaded filename for the recorded working-prototype video here.
->
-> **Final prototype photo placeholder:** Add one or more images showing the complete joystick, rotator, hopper, chute, and cup arrangement here.
+> **Video:** https://drive.google.com/file/d/1h8bf5-Ks-bC1W4nmB9jm69nvbywwYkT4/view?usp=drive_link
 
 #### Written Reflection
 
-> **Placeholder for the team’s observations after the final code and video are uploaded.** Replace the prompts below with the results observed during the working prototype test:
+> **Placeholder for the team’s observations after the final code.** Replace the prompts below with the results observed during the working prototype test:
 >
 > - What method did the final code use to recognize a complete circle from the X and Y readings?
 > - Which joystick thresholds or center range worked reliably?
 > - How long did the 180-degree servo movement take, and did it consistently release exactly one cube?
-> - What changes to the cardboard rotator, hopper, or chute improved reliability?
+> - What changes to the rotator, hopper, or chute improved reliability?
 > - What was fun, surprising, or challenging when sensing, movement, and physical form were combined?
 > - What would the team change in the next iteration?
 
@@ -593,13 +591,33 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 #### Sugar Cube Dropper: Final Interaction
 
-The Sugar Cube Dropper turns serving sugar into a small physical ritual. Instead of pressing a normal dispenser button, the user draws a circle with a joystick. The Raspberry Pi interprets the two-axis gesture and commands a servo-driven cardboard rotator to move 180 degrees. This moves one sugar cube to the chute. The user then releases the joystick to its center position, resetting the interaction for the next serving.
+The Sugar Cube Dropper turns serving sugar into a small physical ritual. Instead of pressing a normal dispenser button, the user draws a circle with a joystick. The Raspberry Pi interprets the two-axis gesture and commands a servo-driven rotator to move 180 degrees. This moves one sugar cube to the chute. The user then releases the joystick to its center position, resetting the interaction for the next serving.
 
 #### Looks Like
 
-The prototype is a tabletop cardboard dispensing machine built around a hopper, a rotating cardboard divider attached to the servo horn, and a chute aimed toward a cup. The rotating piece divides the space beneath the hopper into pockets so that the machine can control a single portion. The Raspberry Pi and Servo pHAT sit beside the mechanism, while the joystick is positioned separately as the user’s handheld control. The low-fidelity cardboard construction makes the mechanism visible and easy to modify.
+The final prototype is a sugar cube dispenser with a black 3D-printed housing. The upper section stores sugar cubes, while a servo-driven rotator controls their release through the bottom outlet into a cup placed below. The open front exposes the internal mechanism, making its movement visible to the user.
 
-> **Final appearance media placeholder:** Add the clearest final prototype photo and the working-video link here.
+The Raspberry Pi and Servo pHAT sit beside the dispenser, with a separate joystick providing the input. During testing, the housing is positioned at the edge of the table so that a cup can sit beneath the outlet. The printed structure holds the storage compartment and rotating mechanism in alignment, developing the earlier cardboard prototype into a more integrated physical form.
+
+![Final 3D-printed dispenser](image.png)
+
+![Prototype setup](image-1.png)
+
+![Servo-mounted rotator and joystick](image-2.png)
+
+#### Design Iterations
+
+We first explored the dispensing mechanism through cardboard prototypes, then used CAD to develop the housing, hopper, and servo placement before building the 3D-printed version.
+
+![Initial CAD design](image-3.png)
+
+The initial CAD study shows the dispenser mounted on a backboard, with a base positioning the cup beneath the outlet. The open front reveals how the storage compartment, rotating wheel, and outlet fit together.
+
+![Revised hopper and servo placement](image-4.png)
+
+A later CAD study explores a sloped hopper wall to guide cubes toward the rotating mechanism and a side-mounted servo to drive the wheel. These images document design explorations; the final printed prototype uses the cylindrical rotator shown in the component photograph above.
+
+**Video:** https://drive.google.com/file/d/1h8bf5-Ks-bC1W4nmB9jm69nvbywwYkT4/view?usp=drive_link
 
 #### Works Like
 
@@ -620,25 +638,13 @@ The user places a cup under the chute, takes hold of the joystick, and rotates i
 
 | Prototype lens | What our prototype demonstrates |
 |---|---|
-| Looks like | A visible cardboard hopper, rotating portion wheel, chute, cup area, joystick, and exposed electronics |
-| Works like | Two-axis circular-gesture detection triggers a 180-degree servo rotation and one-cube delivery |
-| Acts like | The user deliberately “winds” the joystick, receives a cube, then releases it to reset |
+| Looks like | A black 3D-printed housing with an upper sugar storage compartment, cylindrical rotator, bottom outlet, separate joystick, and connected electronics |
+| Works like | A full circular joystick gesture, detected through both X and Y axes, triggers a 180-degree servo rotation to release one sugar cube |
+| Acts like | The user places a cup below the outlet, rotates the joystick in a full circle to request a cube, then releases it back to center before the next serving |
 
 #### Iteration From Part 1
 
-The initial sketch used a cup sensor and a timed gate. We first changed the gate to a rotating pocket mechanism because a timed opening could release zero, one, or several cubes depending on how the cubes were stacked. We then changed the input from automatic cup detection to a joystick circle. This makes the interaction more intentional and gives the user an active role in serving the sugar. The final design therefore connects a recognizable two-axis gesture to a clear physical result.
-
-#### Contributions and Remaining Uploads
-
-- Serena Tsai and Terence Zhang developed the Sugar Cube Dropper concept and physical interaction.
-- The team assembled and tested the joystick, servo, cardboard rotator, hopper, and chute, and recorded the working prototype video.
-- **Pending Terence’s push:** final tested Python code, exact filename/link, and any final implementation-specific reflection details.
-- **Pending media upload/link:** the recorded working-prototype video and final assembled-prototype photo(s).
-
-Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
-* "Looks like": shows how the device should look, feel, sit, weigh, etc.
-* "Works like": shows what the device can do
-* "Acts like": shows how a person would interact with the device
+The initial sketch used a cup sensor and a timed gate. We first changed the gate to a rotating mechanism because a timed opening could release zero, one, or several cubes depending on how the cubes were stacked. We then changed the input from automatic cup detection to a joystick circle. This makes the interaction more intentional and gives the user an active role in serving the sugar. The final design therefore connects a recognizable two-axis gesture to a clear physical result.
 
 ---
 
