@@ -58,7 +58,22 @@ mosquitto_pub -h farlab.infosci.cornell.edu -p 1883 -t 'IDD/test/yourname' -m 'H
 ![MQTT Explorer showing messages](imgs/MQTT-explorer.png)
 
 **💡 Brainstorm 5 ideas for messaging between devices**
+### Brainstorm: Five Ideas for Messaging Between Devices
 
+1. **Distributed Creature**  
+   Four Raspberry Pis act as the eyes, ears, stomach, and heart of one creature. The eyes detect colors, the ears pick up claps, the stomach reads colored tokens that represent food, and the heart measures the rhythm of button taps. Each Pi publishes its readings over MQTT. A shared program combines those inputs to change the creature’s mood, animation, and sounds.
+
+2. **Digital Campfire**  
+   Four players tend a shared virtual campfire. Moving a hand near a sensor can add heat, supply fuel, send a gust of wind, or reveal a line of a campfire story, depending on the player’s station. Each Pi sends its input over MQTT to a shared display. The fire grows when players balance heat and fuel, flickers in the wind, and fades when they stop tending it.
+
+3. **Split-Control Maze**  
+   Four players share control of one character. One controls horizontal movement, another controls vertical movement, a third opens colored doors, and a fourth activates special abilities. Each Pi sends its commands over MQTT to the game. To reach the exit, players have to coordinate moves such as opening a door just as the character reaches it.
+
+4. **Message Mutation Machine**  
+   A short story passes through four Raspberry Pis. The first Pi uses a color reading to change the main character; the second uses a gesture to change the action; the third uses distance to change the mood; and the fourth uses light level to change the setting. Each Pi receives the current story over MQTT and passes on its revised version. The last Pi displays and reads the finished story aloud.
+
+5. **Synchronization Ritual**  
+   Four players make rhythms by moving their hands toward and away from proximity sensors. Each Pi publishes the timing of its player’s movements over MQTT. The system compares the rhythms and uses colors and sound to show how closely they match. When all four players are in sync, the devices reveal a shared message and each plays one note of a chord.
 ---
 
 ## Part B: Collaborative Pixel Grid
@@ -119,10 +134,10 @@ python pixel_grid_publisher.py
 
 Hold colored objects near sensor to change your pixel!
 
-![Pixel grid with two devices](imgs/two-devices-grid.png)
-
 **📸 Include: Screenshot of grid + photo of your Pi setup**
+![Our collaborative pixel grid](Screenshot%20of%20Grid.png)
 
+![My Raspberry Pi and APDS-9960 sensor setup](Pi%20Setup.png)
 ---
 
 ## Part C: Make Your Own
@@ -154,6 +169,12 @@ Replace this README with your documentation:
 
 **1. Project Description**
 - What does it do? Why interesting? User experience?
+
+**Digital Campfire** is a four-player installation in which each person tends the same virtual campfire from a different Raspberry Pi station. Players move their hands near proximity sensors to add heat, add wood, control the wind, or reveal the next line of a campfire story. Each Pi sends its sensor input over MQTT, and a shared web display shows how the fire responds.
+
+Players have to watch the fire and talk to each other. Adding heat makes the flames brighter, but the fire fades without wood. A strong gust makes the flames shrink, and the next line of the story only appears when the fire is burning steadily. A typical moment might sound like, “Add another log, ease off the wind—okay, try the story now.”
+
+We wanted to recreate the feeling of gathering around a fire that everyone helps keep going. Each station gives its player a different way to help, and the shared fire shows the group what their actions accomplished together.
 
 **2. Architecture Diagram**
 - Hardware, connections, data flow
