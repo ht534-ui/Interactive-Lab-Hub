@@ -345,8 +345,6 @@ The complete system should demonstrate the following interactions:
 | User turns and confirms the mood knob | Mood is recorded and the device presents a response |
 | User approaches the sunflower | Proximity sensing triggers a greeting or movement |
 
-These are intended behaviors and should be updated with demonstrated results.
-
 ### 4.2 Functional Prototype Demonstration
 
 [Insert videos or photos demonstrating the actual working interaction.]
