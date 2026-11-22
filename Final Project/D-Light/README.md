@@ -43,40 +43,37 @@ Our primary target users include:
 
 ### 1.4 User Experience
 
-Morning — Greeting and Preparation
+### Morning — Greeting and Preparation
 
 When the user approaches D-Light in the morning, the sunflower detects their presence and turns toward them. Through its built-in microphone and speaker, D-Light greets the user and can provide a brief weather-based suggestion about opportunities to spend time outdoors.
 
 Before leaving, the user puts on the wearable sunlight badge to begin collecting their daily light exposure.
 
-Daytime — Collecting Sunlight
+### Daytime — Collecting Sunlight
 
 Throughout the day, the user wears the badge during their normal activities. The badge periodically measures ambient light and UV exposure without requiring the user to interact with it.
 
 The collected data represents the user's daily light exposure and will later determine how the sunflower responds.
 
-Returning Home — Feeding the Sunflower
+### Returning Home — Feeding the Sunflower
 
 When the user returns home, they connect the badge to D-Light through its magnetic USB-C docking connection, transferring the collected sunlight data to the Raspberry Pi.
 
 The sunflower responds through movements that reflect the user's sunlight exposure:
 
 Sufficient sunlight: The sunflower sways its head with large, lively movements.
-
 Moderate sunlight: The sunflower moves with smaller, gentle motions.
-
 Low sunlight: The sunflower barely moves or remains still.
 
 This interaction allows users to understand their daily sunlight exposure through the sunflower's physical behavior rather than relying solely on numerical measurements.
 
-Conversational Interaction — Talking to D-Light
+### Conversational Interaction — Talking to D-Light
 
 Users can speak directly to the sunflower through a microphone and receive AI-generated voice responses through its speaker.
 
 D-Light uses the user's sunlight exposure data as context to provide relevant feedback and respond to questions. For example:
 
 User: "How much sunlight did I get today?"
-
 D-Light: "You spent quite a bit of time in bright light today! Look how happy I am!"
 
 The sunflower can also respond to casual conversations, allowing the interaction to feel less like checking a health dashboard and more like communicating with a companion.
@@ -86,13 +83,9 @@ Short-term Conversational Memory
 During an active conversation, D-Light remembers recent exchanges so users can ask follow-up questions without repeating themselves.
 
 For example:
-
 User: "I'm feeling tired today."
-
 D-Light: "Sounds like a long day! Would you like to hear how much sunlight you collected?"
-
 User: "Sure, tell me."
-
 D-Light: "You spent relatively little time in bright light today. Maybe a short outdoor break tomorrow could be refreshing!"
 
 D-Light retains conversation context only during the active interaction session. Once the session ends, the conversation context is cleared rather than stored as a permanent personal memory.
