@@ -1,4 +1,4 @@
-# D-Light: A Sunflower Powered by Your Sunlight
+﻿# D-Light: A Sunflower Powered by Your Sunlight
 
 **Course:** Interactive Device Design — Fall 2026
 
@@ -209,7 +209,7 @@ We also saw greater opportunities for technical exploration and interaction desi
 
 ### 2.4 Original Sketches
 
-![D-Light Concept Sketch](D-Light%20Concept%20Sketch.png)
+![D-Light Concept Sketch](dlight-concept-sketch.png)
 
 ---
 
@@ -231,13 +231,13 @@ The intended interaction flow is:
 
 This interaction flow guided the development of both the hardware and the user experience.
 #### Storyboard 1 — Morning & Preparation
-![D-Light Morning and Preparation](Storyboard%201.png)
+![D-Light Morning and Preparation](storyboard-01-morning.png)
 
 #### Storyboard 2 — Daytime Sensing & Activities
-![D-Light Daytime Sensing and Activities](Storyboard%202.png)
+![D-Light Daytime Sensing and Activities](storyboard-02-daytime.png)
 
 #### Storyboard 3 — Docking, Feedback & Voice Interaction
-![D-Light Docking, Feedback and Voice Interaction](Storyboard%203.png)
+![D-Light Docking, Feedback and Voice Interaction](storyboard-03-evening.png)
 
 ### 3.2 Early Prototyping and Technical Testing
 
@@ -253,11 +253,11 @@ We successfully tested:
 - Communication between the Raspberry Pi and external components
 
 This initial technical test confirmed that the core interaction loop—sensor input leading to physical movement—was feasible.
-![alt text](image.png)
+![alt text](pi-sensor-servo-test.png)
 
 Before the final sunflower body was fully assembled, we also used substitute materials and simple props to simulate the sunflower and test the connection between movement and physical form. This allowed us to evaluate how the servo-driven motion might translate into sunflower behavior before completing the final build.
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](sunflower-simulation-01.png)
+![alt text](sunflower-simulation-02.png)
 
 ### 3.3 Physical Development of the Sunflower
 
@@ -274,7 +274,7 @@ The physical build process also helped us consider practical questions such as:
 - how stable the structure needs to be
 - and how the expressive behavior would be perceived by users
 
-![alt text](image-3.png)
+![alt text](sunflower-assembly.png)
 
 ### 3.4 Wearable Badge Development
 
